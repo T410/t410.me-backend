@@ -1,0 +1,1 @@
+module.exports = require('./src/dist/functions/graphql_/graphql_.js')

@@ -1,37 +1,37 @@
-import { buildSchema } from "graphql";
+const { gql } = require("apollo-server-lambda");
 
-export default buildSchema(`
-    type Project {
-        _id: ID!
-        title: String!
-        description: String!
-        source: String
-        demo: String
-    }
+export default gql`
+	type Project {
+		_id: ID!
+		title: String!
+		description: String!
+		source: String
+		demo: String
+	}
 
-    input ProjectInput {
-        title: String!
-        description: String!
-        source: String
-        demo: String
-    }
+	input ProjectInput {
+		title: String!
+		description: String!
+		source: String
+		demo: String
+	}
 
-    type RootMutation {
-        createProject(projectInput: ProjectInput): Project!
-        deleteProject(id: ID!): Project!
-    }
+	type Mutation {
+		createProject(projectInput: ProjectInput): Project!
+		deleteProject(id: ID!): Project!
+	}
 
-    type ProjectData {
-        projects: [Project!]!
-    }
+	type ProjectData {
+		projects: [Project!]!
+	}
 
-    type RootQuery {
-        projects: [Project!]!
-        project(id:ID!): Project!
-    }
+	type Query {
+		projects: [Project!]!
+		project(id: ID!): Project!
+	}
 
-    schema {
-        query: RootQuery
-        mutation: RootMutation
-    }
-`);
+	schema {
+		query: Query
+		mutation: Mutation
+	}
+`;

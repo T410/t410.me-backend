@@ -13,7 +13,8 @@
         }
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "src/.netlify/**/*"
     ],
     "exclude": [
         "node_modules",
