@@ -20,4 +20,4 @@ app.use(
 	})
 );
 
-module.exports.run = serverless(app);
+module.exports.handler = serverless(app);
