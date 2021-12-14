@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
 
-// require("dotenv").config();
-
 let isConnected: number;
 let cachedDB: typeof mongoose;
 const connectToDatabase = () => {
