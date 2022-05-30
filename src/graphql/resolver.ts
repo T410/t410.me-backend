@@ -23,7 +23,7 @@ export default {
 			};
 		},
 		heading: async (_: any, { route }: { route: string }) => {
-			const heading = await Heading.findOne({ route: route });
+			const heading = await Heading.findOne({ route: route.replace(/[\\/]/gi, "") });
 			if (!heading) {
 				throw new Error("Heading not found");
 			}
