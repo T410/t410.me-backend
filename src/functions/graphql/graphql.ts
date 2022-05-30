@@ -5,7 +5,7 @@ import connect from "../../db";
 
 exports.handler = async function (event: any, context: any) {
 	const db = await connect();
-	const server = new ApolloServer({ typeDefs: graphqlSchema, resolvers: graphqlResolver });
+	const server = new ApolloServer({ typeDefs: graphqlSchema, resolvers: graphqlResolver, csrfPrevention: true });
 
 	return new Promise((resolve, reject) => {
 		const cb = (err: Error, args: any) => (err ? resolve(err) : resolve(args));

@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
-    "start": "nodemon ./dist/functions/graphql/graphql.js",
+    "start": "nodemon ./dist/functions/graphql/graphql.js NODE_OPTIONS=--inspect netlify functions:serve",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/T410/t410.me-backend#readme",
   "dependencies": {
     "@netlify/functions": "^1.0.0",
-    "apollo-server-lambda": "^3.5.0",
+    "apollo-server-lambda": "^3.8.1",
     "dotenv": "^10.0.0",
     "graphql": "^15.8.0",
     "mongoose": "^6.1.1"
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^14.18.0",
+    "netlify-cli": "^10.3.3",
     "nodemon": "^2.0.16",
     "typescript": "^4.5.4"
   }

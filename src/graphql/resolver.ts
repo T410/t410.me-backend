@@ -12,7 +12,7 @@ export default {
 				};
 			});
 		},
-		project: async ({ id }: { id: string }) => {
+		project: async (_: any, { id }: { id: string }) => {
 			const project = await Project.findById(id);
 			if (!project) {
 				throw new Error("Project not found");
@@ -22,7 +22,7 @@ export default {
 				_id: project._id.toString(),
 			};
 		},
-		heading: async ({ route }: { route: string }) => {
+		heading: async (_: any, { route }: { route: string }) => {
 			const heading = await Heading.findOne({ route: route });
 			if (!heading) {
 				throw new Error("Heading not found");
