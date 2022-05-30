@@ -1,4 +1,5 @@
 import Project from "../models/project";
+import Heading from "../models/heading";
 import { IProject } from "../types";
 export default {
 	Query: {
@@ -19,6 +20,16 @@ export default {
 			return {
 				...project._doc,
 				_id: project._id.toString(),
+			};
+		},
+		heading: async ({ route }: { route: string }) => {
+			const heading = await Heading.findOne({ route: route });
+			if (!heading) {
+				throw new Error("Heading not found");
+			}
+			return {
+				...heading._doc,
+				_id: heading._id.toString(),
 			};
 		},
 	},

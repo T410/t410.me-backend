@@ -16,6 +16,13 @@ export default gql`
 		demo: String
 	}
 
+	type Heading {
+		_id: ID!
+		route: String!
+		title: String!
+		detail: String!
+	}
+
 	type Mutation {
 		createProject(projectInput: ProjectInput): Project!
 		deleteProject(id: ID!): Project!
@@ -28,6 +35,7 @@ export default gql`
 	type Query {
 		projects: [Project!]!
 		project(id: ID!): Project!
+		heading(route: String!): Heading!
 	}
 
 	schema {
