@@ -17,4 +17,4 @@ const headingSchema = new Schema({
 	},
 });
 
-export default mongoose.model("Project", headingSchema);
+export default mongoose.model("Heading", headingSchema);
